@@ -18,10 +18,12 @@ defmodule DayOne do
       case list do
         [first | [second | [third | tail]]] ->
           sumWindowsOf([second | [third | tail]], [first + second + third | result])
-
         _ ->
           Enum.reverse(result)
       end
+    end
+    def increasesByWindows(list) do
+      sumWindowsOf(list) |> DayOne.PartOne.increases_number(0)
     end
   end
 end
