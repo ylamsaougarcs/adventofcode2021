@@ -28,4 +28,30 @@ defmodule AdvenOfCode do
   def day_one_second(input) do
     DayOne.PartTwo.sumWindowsOf(input) |> DayOne.PartOne.increases_number(0)
   end
+
+  @spec day_two_first([{:down, number} | {:forward, number} | {:up, number}]) :: integer()
+  @doc """
+  Day Two part one code.
+
+  ## Examples
+
+      iex> AdvenOfCode.day_two_first([{:forward, 5}, {:down, 5}, {:forward, 8}, {:up, 3}, {:down, 8}, {:forward, 2}])
+      150
+  """
+  def day_two_first(commands) do
+    DayTwo.PartOne.get_position(commands)
+  end
+
+  @spec day_two_second([{:down, number} | {:forward, number} | {:up, number}]) :: number
+  @doc """
+  Day Two part two code.
+
+  ## Examples
+
+      iex> AdvenOfCode.day_two_second([{:forward, 5}, {:down, 5}, {:forward, 8}, {:up, 3}, {:down, 8}, {:forward, 2}])
+      900
+  """
+  def day_two_second(commands) do
+    DayTwo.PartTwo.get_position(commands)
+  end
 end
